@@ -14,3 +14,4 @@ python3 octave_pybind11_test.py
 - https://docs.octave.org/v10.2.0/Standalone-Programs.html
 - https://pybind11.readthedocs.io/en/stable/compiling.html
 - https://pybind11.readthedocs.io/en/stable/advanced/pycpp/numpy.html
+- https://stackoverflow.com/questions/42645228/cast-numpy-array-to-from-custom-c-matrix-class-using-pybind11
