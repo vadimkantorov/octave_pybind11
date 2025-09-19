@@ -36,11 +36,12 @@ public:
         {
             size_t rows = numpy_array.shape(0);
             size_t cols = numpy_array.shape(1);
+            size_t itemsize = numpy_array.itemsize();
             const double* src_ptr = numpy_array.data();
             
-            Matrix octave_matrix(rows, cols);
+            Matrix octave_matrix(rows, cols); // global namespace? octave::Matrix doesn't work
             double* dst_ptr = (double*)octave_matrix.data();
-            std::memcpy(dst_ptr, data_ptr, sizeof(double) * rows * cols);
+            std::memcpy(dst_ptr, src_ptr, itemsize * rows * cols);
 
             octave_value_list in;
             in(0) = octave_matrix; 
