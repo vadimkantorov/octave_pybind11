@@ -5,7 +5,12 @@ sudo apt-get install octave octave-dev
 pip install pybind11 --user --break-system-packages
 make octave_pybind11.so
 
-LD_PRELOAD="/usr/lib/x86_64-linux-gnu/octave/8.4.0/liboctinterp.so.11 /usr/lib/x86_64-linux-gnu/octave/8.4.0/liboctave.so.10" python3 octave_pybind11_test.py
+ldd octave_pybind11.so
+# may print unresolved dependencies for liboctinterp.so and liboctave.so
+# for some reason, it did not work for me without explicit preloads, even did not work: export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/octave/8.4.0/"
+export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/octave/8.4.0/liboctinterp.so.11 /usr/lib/x86_64-linux-gnu/octave/8.4.0/liboctave.so.10"
+
+python3 octave_pybind11_test.py
 # make test
 ```
 
