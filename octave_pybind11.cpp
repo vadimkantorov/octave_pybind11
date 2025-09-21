@@ -18,7 +18,8 @@ private:
 public:
     OctavePybind11Interpreter()
     {
-        // Inhibit reading history file by calling: interpreter.initialize_history (false);
+        // Inhibit reading history file by calling: 
+        interpreter.initialize_history (false);
         // Set custom load path here if you wish by calling: interpreter.initialize_load_path (false);
         // Perform final initialization of interpreter, including executing commands from startup files by calling: interpreter.initialize(); if (! interpreter.initialized ()) { std::cerr << "Octave interpreter initialization failed!" << std::endl; exit (status); }
         // You may skip this step if you don't need to do anything between reading the startup files and telling the interpreter that you are ready to execute commands. Tell the interpreter that we're ready to execute commands:
